@@ -1,0 +1,111 @@
+:root {
+  /* Premium Beige Palette */
+  --bg-primary: #FDFCF8; /* Very light cream */
+  --bg-secondary: #F2EFE9; /* Light beige for cards/sections */
+  --bg-tertiary: #E6E2D6; /* Darker beige for borders/inputs */
+  
+  --text-primary: #3C3633; /* Deep warm charcoal */
+  --text-secondary: #6B635E; /* Muted brown-grey */
+  --text-light: #8C857B; /* Light text for metadata */
+  
+  --accent-gold: #C5B358; /* Muted Gold */
+  --accent-gold-hover: #B09F48;
+  --accent-dark: #5D534A; /* Dark accent */
+  
+  --success: #7A9A7E; /* Muted Green */
+  --error: #B85C5C; /* Muted Red */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+
+  /* Effects */
+  --shadow-sm: 0 2px 4px rgba(60, 54, 51, 0.05);
+  --shadow-md: 0 8px 16px rgba(60, 54, 51, 0.08);
+  --shadow-lg: 0 16px 32px rgba(60, 54, 51, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
